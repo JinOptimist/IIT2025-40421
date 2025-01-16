@@ -107,13 +107,23 @@ for (let i = 0; i < 10; i++) {
 
 console.log(' ************** ')
 const numbers = [1, 6, 4, 7, 3];
-
 let answer = 0;
-
 for (let i = 0; i < numbers.length; i++) {
     const element = numbers[i];
     answer = answer + element;
 }
-
 console.log(answer);
+
+const numb = [1, 6, 4, 7, 3];
+for (let index = 0; index < numb.length; index++) {
+    const element = numb[index];
+    if (element % 2 == 1) {
+        console.log(element);
+    }
+
+}
+const numbers1 = [1, 6, 4, 7, 3];
+let firstnumber1 = numbers1[0];
+let lastNumber = numbers1[numbers1.length - 1];
+console.log(firstnumber1 + lastNumber);
 
