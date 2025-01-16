@@ -108,7 +108,12 @@ for (let i = 0; i < 10; i++) {
 console.log(' ************** ')
 const numbers = [1, 6, 4, 7, 3];
 
+let answer = 0;
+
 for (let i = 0; i < numbers.length; i++) {
     const element = numbers[i];
-    console.log(element);
+    answer = answer + element;
 }
+
+console.log(answer);
+
