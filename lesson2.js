@@ -3,7 +3,7 @@ function task1() {
     // const text = tag.value;
 
     const wordCount = document
-        .querySelector('#text1') 
+        .querySelector('#task1') 
         .value
         .split(' ')
         .length;
