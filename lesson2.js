@@ -1,17 +1,31 @@
 function task1() {
-    // const tag = document.querySelector('#text1');
-    // const text = tag.value;
-
     const wordCount = document
-        .querySelector('#task1') 
+        .querySelector('#task1')
         .value
         .split(' ')
         .length;
 
-    // document
-    //     .querySelector('#task1Result')
-    //     .innerHTML = 'In text ' + wordCount + ' words';
-    document
-        .querySelector('#task1Result')
-        .innerHTML = `In text ${wordCount } words`;
+    const task1ResultTag = document
+        .querySelector('#task1Result');
+    const answer = `In text ${wordCount} words`;
+    task1ResultTag.innerHTML = answer;
+}
+
+function task2() {
+    const arrayLetter = document
+        .querySelector('#task2')
+        .value
+        .split('');
+
+    const firstLetter = arrayLetter[0];
+    let count = 0;
+    for (let i = 0; i < arrayLetter.length; i++) {
+        const letter = arrayLetter[i];
+        
+        if (letter == firstLetter){
+            count++;
+        }
+    }
+
+    console.log(firstLetter + ' - ' + count);
 }
