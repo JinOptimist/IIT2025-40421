@@ -17,15 +17,32 @@ function task2() {
         .value
         .split('');
 
-    const firstLetter = arrayLetter[0];
-    let count = 0;
+
+    let answer = '';
+    const alreadyCountedLetters = [];
     for (let i = 0; i < arrayLetter.length; i++) {
         const letter = arrayLetter[i];
-        
-        if (letter == firstLetter){
-            count++;
+
+        const indexOfMyLetter = alreadyCountedLetters.indexOf(letter);
+        if (indexOfMyLetter == -1) {
+            alreadyCountedLetters.push(letter);
+            const partOfAnswer = calcOneLetter(arrayLetter, i);
+            answer = answer + ' * ' + partOfAnswer;
         }
     }
 
-    console.log(firstLetter + ' - ' + count);
+    document.querySelector('#task2Result').innerHTML = answer;
+
+}
+
+function calcOneLetter(arrayLetter, magicNumber) {
+    const magicLetter = arrayLetter[magicNumber];
+    let magicLetterCount = 0;
+    for (let i = 0; i < arrayLetter.length; i++) {
+        const letter = arrayLetter[i];
+        if (letter == magicLetter) {
+            magicLetterCount++;
+        }
+    }
+    return "'" + magicLetter + "'" + ' - ' + magicLetterCount;
 }
