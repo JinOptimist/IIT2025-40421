@@ -144,7 +144,7 @@ function numberToWordFor2Symbols(symbols) {
   } else if (symbols.length == 2) {
     // [4, 1]
     // [8, 9]
-    // [3, 6]
+    // [2, 6]
     const firstNumber = symbols[0] - 0; // Количество десятков
     const secondNumber = symbols[1] - 0; // Количество единиц
     result += dozenFrom20To90Words[firstNumber - 2];
