@@ -1,10 +1,37 @@
-<input id="task1" />
-<button onclick="task1()">Do task1</button>
-<div id="task1Result"></div>
+<div class="task1" style="display: none;">
+  <div>Пользователь может ввести любые числа в инпут</div>
+  <div>
+    По нажатию на кнопку, мы либо должны сказать, что числа 7 нету. Либо должны
+    сказать, какое оно по счёту
+  </div>
+  <input id="task1" />
+  <button onclick="findNumber7()">Find Number 7</button>
+  <div id="task1Result"></div>
+</div>
 
-<input id="task2" />
-<button onclick="task2()">Do task2</button>
-<div id="task2Result"></div>
+<div class="task2" style="display: none;">
+  <div>
+    Пользователь вводит любые числа. А мы проверяем, есть ли среди них такие,
+    что их сумма равна 10 и они стоят рядом
+  </div>
+  <input id="task2" />
+  <button onclick="checkIsSum10Exist()">
+    Искать сумму 10 у рядом стоящих чисел
+  </button>
+  <div id="task2Result"></div>
+</div>
 
-<!-- <script src="lesson1.js"></script> -->
-<script src="lesson2.js"></script>
+<div class="task3">
+	<div>
+	  Пользователь вводи число, цифрами. А мы ему выводим это число буквами.
+	  Например. Пользователь вводит "123". Мы пишем "Сто Двадцать Три"
+	</div>
+	<input id="task3" />
+	<button onclick="sayNumberByWords()">
+	  Напиши буквами
+	</button>
+	<div id="task3Result"></div>
+  </div>
+  
+
+<script src="lesson3.js"></script>
