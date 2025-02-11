@@ -1,0 +1,45 @@
+body {
+    background-color: aqua;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+}
+
+.red {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.green {
+    background-color: green;
+    width: 0;
+    height: 100px;
+}
+
+.desc {
+    display: flex;
+}
+
+.card {
+    width: 100px;
+    height: 200px;
+    border: 2px red solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.face {
+    display: none;
+}
