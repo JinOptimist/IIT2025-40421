@@ -1,5 +1,5 @@
 body {
-    background-color: aqua;
+    background-color: #ccc;
 }
 
 .box {
@@ -22,6 +22,7 @@ body {
 
 .desc {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -42,4 +43,20 @@ body {
 
 .face {
     display: none;
+}
+
+.cover {
+    /* display: none; */
+}
+
+.template {
+    display: none;
+}
+
+.outdated {
+    display: none;
+}
+
+.card.finded{
+    opacity: .4;
 }
