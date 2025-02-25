@@ -1,10 +1,10 @@
 $(document).ready(function () {
   const animationSpeed = 1 * 1000;
   const imagesSrc = [
-    'images/girl1.jpg',
-    'images/girl2.jpg',
-    'images/girl3.jpg',
-    'images/girl4.jpg',
+    'images/girl01.jpg',
+    'images/girl02.jpg',
+    'images/girl03.jpg',
+    'images/girl04.jpg',
   ];
 
   // те картинки что видит пользователь в их реальной последовательности
