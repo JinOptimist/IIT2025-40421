@@ -122,11 +122,11 @@ $(document).ready(function () {
             actionsToPerform.push(rotateCaruselToRight);
         }
 
-         // right arrow code is 39  
-         if (e.keyCode == 13
+        // right arrow code is 39  
+        if (e.keyCode == 13
             || e.keyCode == 32
             || e.keyCode == 70) {
-                openCenterImageToFullSize();
+            openCenterImageToFullSize();
         }
 
         console.log(e.keyCode);
@@ -334,10 +334,51 @@ $(document).ready(function () {
     }
 
     function init() {
-        for (let i = 1; i < 21; i++) {
-            images.push(`images/girl${i < 10 ? '0' : ''}${i}.jpg`);
+        for (let i = 1; i < 8; i++) {
+            //images.push(`images/girl${i < 10 ? '0' : ''}${i}.jpg`);
+            images.push(`images/best/best${i < 10 ? '0' : ''}${i}.jpg`);
         }
+        for (let i = 0; i < 5; i++) {
+            $(`.block-${i} img`).attr('src', images[i]);
+        }
+
         // logToConsoleAllImageSrcs();
+        runInfinitAnimation();
+    }
+
+    function runInfinitAnimation() {
+        const smallDelay = 100;
+        const timeToEnjoy = 5 * 1000;
+        const delay1 = smallDelay;
+        const delay2 = delay1
+            + animationSpeed
+            + timeToEnjoy;
+        const delay3 = delay2
+            + animationSpeed
+            + smallDelay;
+        const delay4 = delay3
+            + animationSpeed
+            + smallDelay;
+
+        setInterval(
+            () => {
+                setTimeout(
+                    openCenterImageToFullSize,
+                    delay1,
+                );
+
+                setTimeout(
+                    exitFromFullSize,
+                    delay2
+                );
+
+                setTimeout(
+                    () => { actionsToPerform.push(rotateCaruselToLeft); },
+                    delay3
+                );
+            },
+            delay4
+        );
     }
 });
 

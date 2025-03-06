@@ -1,0 +1,22 @@
+body{
+    overflow: hidden;
+}
+.gallery {
+    display: flex;
+}
+
+.placeholder {
+    background-color: #ccc;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.image {
+    max-width: 190px;
+    max-height: 280px;
+    position: absolute;
+    top: 750px;
+    left: 3000px;
+}
