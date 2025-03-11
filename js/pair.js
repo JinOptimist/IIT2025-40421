@@ -69,7 +69,7 @@ $(document).ready(function () {
       openedCardIndex = undefined
       return;
     }
-    
+
     //user click to second card. At first open the clicked card
     showCard(currentCard);
 
@@ -148,7 +148,19 @@ $(document).ready(function () {
   }
 
   function init() {
-    for (let i = 0; i < imagesSrc.length; i++) {
+
+  }
+
+  $('.easy').click(function(){
+    startGame(2);
+  });
+
+  $('.hard').click(function(){
+    startGame(4);
+  });
+
+  function startGame(maxImageCount) {
+    for (let i = 0; i < maxImageCount; i++) {
       const imageSrc = imagesSrc[i];
       arrayForCards.push(imageSrc);
       arrayForCards.push(imageSrc);
@@ -159,7 +171,7 @@ $(document).ready(function () {
     for (let i = 0; i < arrayForCards.length; i++) {
       const imageSrc = arrayForCards[i];
       createCard(imageSrc, i);
-    }
+    } 
   }
 
   function createCard(imageSrc, index) {
