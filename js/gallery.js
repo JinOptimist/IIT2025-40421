@@ -1,17 +1,23 @@
 $(document).ready(function () {
     const images = [];
-    const initialImageCount = 7;
+    const imagePerPage = 3;
+    let page = 0;
+    const initialImageCount = 8;
+
+    const animationSpeedFast = 500;
     init();
 
     function init() {
-        for (let i = 0; i < initialImageCount; i++) {
-            images.push(`images/best/best0${i + 1}.jpg`);
-            // images.push(`images/girl${i < 10 ? '0' : ''}${i + 1}.jpg`);
+        if (!images.length) {
+            for (let i = 0; i < initialImageCount; i++) {
+                images.push(`images/best/best0${i + 1}.jpg`);
+                // images.push(`images/girl${i < 10 ? '0' : ''}${i + 1}.jpg`);
+            }
         }
 
         const placeholderTag = $('.gallery .placeholder.template')
         $('.gallery').empty();
-        for (let i = 0; i < initialImageCount; i++) {
+        for (let i = 0; i < imagePerPage; i++) {
             const copyOfPlaceholder = placeholderTag.clone();
             copyOfPlaceholder.attr('data-id', i);
             copyOfPlaceholder.removeClass('template');
@@ -19,11 +25,16 @@ $(document).ready(function () {
         }
         $('.gallery').append(placeholderTag)
 
-        for (let i = 0; i < images.length; i++) {
-            const imageSrc = images[i];
+        for (let i = 0; i < imagePerPage; i++) {
+            const index = correctIndex(page * imagePerPage + i);
+            const imageSrc = images[index];
             const placeholder = $(`[data-id=${i}]`);
             moveImage(imageSrc, placeholder, i);
         }
+    }
+
+    function correctIndex(index) {
+        return index % images.length;
     }
 
     function moveImage(imageSrc, placeholder, index) {
@@ -59,7 +70,35 @@ $(document).ready(function () {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    $(window).on('resize', function(){
+    $('.next').click(function () {
+        $('img').animate(
+            {
+                top: 0,
+            },
+            animationSpeedFast);
+        setTimeout(() => {
+            $('img').animate(
+                {
+                    left: 0
+                },
+                animationSpeedFast);
+        }, animationSpeedFast);
+        setTimeout(() => {
+            $('img').animate(
+                {
+                    left: -1000,
+                },
+                animationSpeedFast);
+        }, animationSpeedFast * 2);
+
+        setTimeout(() => {
+            page++;
+            $('img').remove();
+            init();
+        }, animationSpeedFast * 3 + 500);
+    });
+
+    $(window).on('resize', function () {
         $('.image').remove();
         init();
     });
