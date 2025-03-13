@@ -100,12 +100,13 @@ $(document).ready(function () {
       const angel = (Math.PI * 2 * i) / images.length;
       const x = radiusOfOpenDeck * Math.cos(angel) * 1.5;
       const y = radiusOfOpenDeck * Math.sin(angel);
+      const angelToRotate = (360 / images.length) * i;
 
       setTimeout(function () {
         moveTo(card, {
           top: y,
           left: x,
-          rotateAngel: 0,
+          rotateAngel: angelToRotate,
         });
       }, smallAnimationDelay * (images.length - i));
     }
