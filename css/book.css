@@ -12,7 +12,7 @@ body {
 
 .book {
     height: 80vh;
-    background-color: #ccc;
+    /* background-color: #ccc; */
     display: flex;
     width: calc(100% - 50px);
 }
@@ -31,6 +31,8 @@ body {
     transition: all 3s;
     height: 100%;
     width: 100%;
+    background-color: wheat;
+    border: 1px solid brown;
 }
 
 .page img {
@@ -40,12 +42,16 @@ body {
 
 .page.left {
     transform-origin: right;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px
 }
 
 .page.right {
     transform-origin: left;
-    background-color: wheat;
+    /* background-color: wheat; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .moving {
@@ -63,26 +69,3 @@ body {
     transform: rotateY(0deg) skewY(0deg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.red {
-    transition: all 2s;
-    width: 200px;
-    height: 200px;
-    background-color: red;
-}
-
-.red.big {
-    width: 600px;
-    height: 600px;
-}

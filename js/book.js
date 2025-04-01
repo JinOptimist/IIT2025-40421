@@ -3,8 +3,6 @@ $(document).ready(function () {
     const animationSpeed = 3 * 1000;
     let currentLeftImageIndex = 0;
 
-    init();
-
     $('.page.right.initial').click(function () {
         const rightMoving = $('.page.right.moving');
         rightMoving.css('transition', 'none');
@@ -40,28 +38,29 @@ $(document).ready(function () {
     });
 
 
-
     function init() {
-        for (let i = 1; i < 8; i++) {
-            //images.push(`images/girl${i < 10 ? '0' : ''}${i}.jpg`);
-            images.push(`images/best/best${i < 10 ? '0' : ''}${i}.jpg`);
+        for (let i = 1; i < 22; i++) {
+            images.push(`images/girl${i < 10 ? '0' : ''}${i}.jpg`);
+            // images.push(`images/best/best${i < 10 ? '0' : ''}${i}.jpg`);
         }
 
         $('.page.left.initial').find('img').attr('src', getImage(currentLeftImageIndex))
         $('.page.right.initial').find('img').attr('src', getImage(currentLeftImageIndex + 1))
+
+        setInterval(() => {
+            $('.page.right.initial').click();
+        }, animationSpeed * 3);
     }
 
-    function getImage(i){
-        if (i < 0){
+    function getImage(i) {
+        if (i < 0) {
             i = i + images.length;
         }
-        if (i > images.length - 1){
+        if (i > images.length - 1) {
             i = i % images.length;
         }
-        return  images[i];
+        return images[i];
     }
 
-    $('.red').click(function () {
-        $('.red').toggleClass('big');
-    });
+    init();
 })
