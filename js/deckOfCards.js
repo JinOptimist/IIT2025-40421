@@ -1,6 +1,6 @@
 $(document).ready(function () {
   const images = [];
-  const initialImageCount = 8;
+  const initialImageCount = 20;
   const marginForCardInDeck = 5;
   const radiusOfOpenDeck = 500;
   const animationSpeed = 1 * 1000;
@@ -15,7 +15,8 @@ $(document).ready(function () {
 
   function fillImagesArray() {
     for (let i = 0; i < initialImageCount; i++) {
-      images.push(`images/best/best${i < 9 ? "0" : ""}${i + 1}.jpg`);
+      //images.push(`images/best/best${i < 9 ? "0" : ""}${i + 1}.jpg`);
+	  images.push(`images/girl${i < 9 ? "0" : ""}${i + 1}.jpg`);
     }
   }
 
